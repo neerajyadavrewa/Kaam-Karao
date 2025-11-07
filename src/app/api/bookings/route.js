@@ -1,8 +1,8 @@
 import { MongoClient, ObjectId } from 'mongodb';
 
 // MongoDB client setup
-const client = new MongoClient('mongodb+srv://neeraj:neeraj@cluster0.a04kx.mongodb.net/');
-const dbName = 'booking-system';
+const client = new MongoClient(process.env.MONGODB_URI);
+const dbName = process.env.DB_NAME;
 
 // Handle GET requests (Fetching all bookings)
 export async function GET() {

@@ -2,8 +2,8 @@ import { MongoClient } from 'mongodb';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-const client = new MongoClient('mongodb+srv://neeraj:neeraj@cluster0.a04kx.mongodb.net/');
-const dbName = 'booking-system';
+const client = new MongoClient(process.env.MONGODB_URI);
+const dbName = process.env.DB_NAME;
 
 export async function POST(req) {
   const { email, password } = await req.json();
